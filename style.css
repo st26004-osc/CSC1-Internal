@@ -21,3 +21,8 @@ header li {
     font-weight: bold;
     max-width: 100%;
 }
+
+#heroimg {
+    width: 100%;
+    height: auto;
+}
