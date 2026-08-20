@@ -1,0 +1,23 @@
+header {
+    background-color: #eb5e28;
+    display: flex;
+    margin: 0px;
+    padding: 0px 2%;
+    justify-content: space-between;
+}
+
+header a {
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+header li {
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+    margin: 0px;
+    font-size: large;
+    font-weight: bold;
+    max-width: 100%;
+}
