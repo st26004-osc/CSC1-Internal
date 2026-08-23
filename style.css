@@ -20,6 +20,13 @@ header li {
     font-size: large;
     font-weight: bold;
     max-width: 100%;
+    transition: transform 0.2s ease;
+}
+
+header li:hover {
+    text-decoration: underline;
+    color: white;
+    transform: scale(1.1);
 }
 
 #heroimg {
