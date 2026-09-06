@@ -1,8 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body .content {
+    margin: 7px;
+}
+
 header {
     background-color: #eb5e28;
-    display: flex;
-    margin: 0px;
-    padding: 0px 2%;
+    display: inline-flex;
+    align-items: center;
+    margin: 0%;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
     justify-content: space-between;
 }
 
@@ -12,14 +24,18 @@ header a {
     color: white;
 }
 
+header h1 {
+    margin-right: auto;
+}
+
 header li {
+    flex-wrap: wrap;
     list-style: none;
     display: inline-block;
-    padding: 20px;
-    margin: 0px;
     font-size: large;
     font-weight: bold;
     max-width: 100%;
+    padding: 12px; 
     transition: transform 0.2s ease;
 }
 
@@ -30,8 +46,19 @@ header li:hover {
 }
 
 #heroimg {
-    width: 100%;
+    max-width: 100%;
     height: auto;
+}
+
+#logo {
+    height: auto;
+    max-width: 10%;
+    min-width: 150px;
+    margin: 10px 0px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin: 2px 2px;
+    align-self: center;
 }
 
 /* Recipes Styling */
@@ -73,4 +100,34 @@ header li:hover {
     background-image: url('Images/sushi.jpg');
     color: white;
     -webkit-text-stroke: 0.4px black;
+}
+
+/* Responsive design on mobile devices*/
+
+@media (max-width: 450px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header h1 {
+        text-align: center;
+        margin: 10px 10px;
+    }
+
+    header li {
+        display: inline-block;
+        margin: 10px 0%;
+        padding: 8px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe {
+        width: 90%;
+        height: auto;
+    }
 }
