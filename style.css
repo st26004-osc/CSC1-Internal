@@ -1,11 +1,61 @@
+/* Navigation Bar should span whole screen width */ 
+
 body {
     margin: 0;
     padding: 0;
+    background-color: #f6f6f6;
 }
 
-body .content {
+/* Home Page */
+
+.content {
+    display: grid;
     margin: 7px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start;
+    grid-gap: 0px;
 }
+
+.content p {
+    font-family: 'Valley Sans';
+    font-size: 1.2em;
+    margin: 20px 30px;
+}
+
+.content-item {
+    /* Div. Size Checking */ background-color: none;
+}
+
+.content img {
+    flex-shrink: 0;
+    object-fit: cover;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 100%;
+}
+
+#home-title {
+    flex-direction: column;
+}
+
+#home-title h2 {
+    font-family: 'Caveat Brush';
+    font-size: 4em;
+    margin: 20px 30px;
+}
+
+#heroimg {
+    height: 115%;
+    grid-column: 2;
+    grid-row: 1 / span 3;
+}
+
+#intro-paragraph {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* Navigation Bar */
 
 header {
     background-color: #eb5e28;
@@ -15,7 +65,7 @@ header {
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 header a {
@@ -25,6 +75,7 @@ header a {
 }
 
 header h1 {
+    font-family: 'Caveat Brush';
     margin-right: auto;
 }
 
@@ -36,6 +87,7 @@ header li {
     font-weight: bold;
     max-width: 100%;
     padding: 12px; 
+    margin: 0px;
     transition: transform 0.2s ease;
 }
 
@@ -43,11 +95,6 @@ header li:hover {
     text-decoration: underline;
     color: white;
     transform: scale(1.1);
-}
-
-#heroimg {
-    max-width: 100%;
-    height: auto;
 }
 
 #logo {
@@ -61,9 +108,9 @@ header li:hover {
     align-self: center;
 }
 
-/* Recipes Styling */
+/* Recipes */
 
-.container {
+.recipe-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -91,25 +138,72 @@ header li:hover {
     color: white;
     -webkit-text-stroke: 0.4px black;
 }
+
 #ramen {
     background-image: url('Images/ramen.jpg');
     color: white;
     -webkit-text-stroke: 0.4px black;
 }
+
 #sushi {
     background-image: url('Images/sushi.jpg');
     color: white;
     -webkit-text-stroke: 0.4px black;
 }
 
-/* Responsive design on mobile devices*/
+/* Responsive design on mobile devices */
 
-@media (max-width: 450px) {
+@media screen and (max-width: 769px) {
+
+    #home-title h2 {
+        font-size: 3.5em;
+    }
+
+    #heroimg {
+        height: 100%;
+    }
+    
+    header ul {
+        margin-left: 30%;
+    }
+
+    header li {
+        margin: 0px 10px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    #heroimg,
+    #intro-paragraph {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    #home-title h2 {
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .content-item p {
+        text-align: center;
+        font-size: 1em;
+    }
+
     header {
         flex-direction: column;
         justify-content: center;
     }
 
+    header ul {
+        margin-left: 0%;
+    }
+    
     header h1 {
         text-align: center;
         margin: 10px 10px;
@@ -117,11 +211,11 @@ header li:hover {
 
     header li {
         display: inline-block;
-        margin: 10px 0%;
+        margin: 3px 0%;
         padding: 8px;
     }
 
-    .container {
+    .recipe-container {
         flex-direction: column;
         align-items: center;
     }
