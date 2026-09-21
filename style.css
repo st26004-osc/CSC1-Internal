@@ -1,62 +1,129 @@
-/* Navigation Bar should span whole screen width */ 
-
+/* Navigation Bar spans whole screen width */ 
 body {
     margin: 0;
     padding: 0;
     background-color: #f6f6f6;
 }
 
-/* Home Page */
-
+/* Grid Layout */
 .content {
     display: grid;
-    margin: 7px;
-    grid-template-columns: 1fr 1fr;
-    justify-content: flex-start;
+    grid-template-columns: 1fr;
     grid-gap: 0px;
 }
 
-.content p {
-    font-family: 'Valley Sans';
-    font-size: 1.2em;
-    margin: 20px 30px;
+.sideimg-div {
+    justify-items: flex-end;
 }
 
-.content-item {
-    /* Div. Size Checking */ background-color: none;
-}
-
-.content img {
-    flex-shrink: 0;
+.sideimg-div img {
+    display: block;
+    justify-self: flex-end;
+    width: 100%;
+    max-width: 700px;
     object-fit: cover;
-    box-sizing: border-box;
-    max-width: 100%;
-    height: 100%;
 }
 
-#home-title {
-    flex-direction: column;
+.sideimg-div p {
+    padding: 0px 10px;
+    font-family: 'Public Sans';
+    text-align-last: right;
 }
 
-#home-title h2 {
+hr {
+    border: none;
+    height: 2px;
+    background-color: black;
+    width: 100%;
+}
+
+/* Home Page Config.*/
+#home {
+    margin: 7px;
+}
+
+#home-title h1 {
     font-family: 'Caveat Brush';
     font-size: 4em;
     margin: 20px 30px;
 }
 
-#heroimg {
-    height: 115%;
+#home p {
+    font-family: 'Valley Sans';
+    font-size: 1.2em;
+    margin: 20px 30px;
+}
+
+#home .sideimg-div {
     grid-column: 2;
     grid-row: 1 / span 3;
 }
 
-#intro-paragraph {
+#home img {
+    height: 105%;
+}
+
+#home .paragraph-div {
     grid-column: 1;
     grid-row: 2;
 }
 
-/* Navigation Bar */
+/* Cuisine Page Config.*/
+#cuisine {
+    margin: 20px 20px;
+}
 
+#cuisine-title h1 {
+    font-family: 'Public Sans';
+    font-size: 2.5em;
+}
+
+#cuisine h2 {
+    font-family: 'Public Sans';
+    font-size: 2em;
+    font-weight: normal;
+}
+
+#cuisine h3 {
+    font-family: 'Public Sans';
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+#cuisine p {
+    font-family: 'Public Sans';
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.hr-div {
+    width: 100%;
+}
+
+#cuisine img {
+    height: 100%;
+    max-height: 90%;
+}
+
+#onigiri-section, #ramen-section {
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+#onigiri-section .paragraph-div, #ramen-section .paragraph-div { 
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#onigiri-section .sideimg-div, #ramen-section .sideimg-div {
+    align-content: center;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+/* Navigation Bar Config.*/
 header {
     background-color: #eb5e28;
     display: inline-flex;
@@ -74,8 +141,9 @@ header a {
     color: white;
 }
 
-header h1 {
+header h3 {
     font-family: 'Caveat Brush';
+    font-size: 2em;
     margin-right: auto;
 }
 
@@ -108,8 +176,7 @@ header li:hover {
     align-self: center;
 }
 
-/* Recipes */
-
+/* Recipes Config.*/
 .recipe-container {
     display: flex;
     flex-wrap: wrap;
@@ -152,47 +219,77 @@ header li:hover {
 }
 
 /* Responsive design on mobile devices */
-
 @media screen and (max-width: 769px) {
-
-    #home-title h2 {
-        font-size: 3.5em;
+    #home-title h1 {
+        font-size: 3em;
     }
 
-    #heroimg {
-        height: 100%;
+    #cuisine h1 {
+        font-size: 2em;
+    }
+
+    #cuisine h2 {
+        font-size: 1.7em;
     }
     
-    header ul {
-        margin-left: 30%;
+    #cuisine img {
+        max-height: 85%;
     }
 
-    header li {
-        margin: 0px 10px;
-        padding: 8px;
+    #cuisine .paragraph-div, #cuisine .sideimg-div {
+        font-size: 0.8em;
+    }
+
+    .sideimg-div p {
+        text-align-last: left;
+    }
+
+    header ul {
+        margin-left: 20%;
     }
 }
 
-@media screen and (max-width: 450px) {
-
+@media screen and (max-width: 480px) {
     .content {
-        grid-template-columns: 1fr;
+        justify-content: center;
     }
 
-    #heroimg,
-    #intro-paragraph {
+    #home, #cuisine {
+        text-align: center;
+    }
+
+    #home .sideimg-div {
         grid-column: auto;
         grid-row: auto;
     }
 
-    #home-title h2 {
-        text-align: center;
-        font-size: 3em;
+    .sideimg-div p {
+        display: none;
     }
 
-    .content-item p {
-        text-align: center;
+    #home .paragraph-div, #cuisine .paragraph-div {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    #onigiri-section, #ramen-section {
+        display: block;
+    }
+
+    #home-title p {
+        font-size: 1.2em;
+    }
+
+    #home .paragraph-div p {
         font-size: 1em;
+    }
+    
+    #home-title h1 {
+        display: none;
+    }
+
+    #cuisine p {
+        font-size: 0.9em;
     }
 
     header {
@@ -201,16 +298,21 @@ header li:hover {
     }
 
     header ul {
-        margin-left: 0%;
+        margin: 0%;
+        padding: 0%;
+        text-align: center;
+    }
+
+    header nav {
+        margin: 10px;
+        width: 100%;
     }
     
-    header h1 {
-        text-align: center;
+    header h3 {
         margin: 10px 10px;
     }
 
     header li {
-        display: inline-block;
         margin: 3px 0%;
         padding: 8px;
     }
