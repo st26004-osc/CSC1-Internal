@@ -27,16 +27,131 @@
     </header>
 
     <div class="recipe-container">
-        <div id="riceballs" class="recipe">
+        <button onclick="RiceballRecipe()" id="riceballs" class="recipe">
             <h2>Rice Balls</h2>
-        </div>
-        <div id="ramen" class="recipe">
+        </button>
+        <button onclick="RamenRecipe()" id="ramen" class="recipe">
             <h2>Ramen</h2>
-        </div>
-        <div id="sushi" class="recipe">
+        </button>
+        <button onclick="SushiRecipe() "id="sushi" class="recipe">
             <h2>Sushi</h2>
+        </button>
+        <button onclick="CurryRecipe()" id="curry" class="recipe">
+            <h2>Curry Rice</h2>
+        </button>
+    </div>
+
+    <div class="content" id="instructions">
+        <div class="sideimg-div">
+            <img> 
+        </div>
+
+        <div class="content-item paragraph-div">
+            <h1>Please select a recipe.</h1>
+            <h2 id="required-ingredients"></h2>
+            <h3 id="required-list"></h3>
+            <h2 id="customisable-ingredients"></h2>
+            <h3 id="optional-list"></h3>
+            <p></p>
         </div>
     </div>
 </body>
+
+<script>
+    var paragraph = document.querySelector("#instructions .content-item p");
+    var dishTitle = document.querySelector("#instructions .content-item h1");
+    var requiredIngredients = document.querySelector("#instructions .content-item #required-ingredients");
+    var requiredList = document.querySelector("#instructions .content-item #required-list");
+    var customisableIngredients = document.querySelector("#instructions .content-item #customisable-ingredients");
+    var optionalList = document.querySelector("#instructions .content-item #optional-list");
+    var foodimage = document.querySelector("#instructions .sideimg-div img");
+    const recipeImagePaths = [
+        "Images/Rice balls.jpg",
+        "Images/ramen.jpg",
+        "Images/curry-rice.jpg",
+        "Images/sushi.jpg"
+    ];
+
+    recipeImagePaths.forEach((path) => {
+        const image = new Image();
+        image.src = path;
+    });
+    
+    function RiceballRecipe() {
+        foodimage.src = 'Images/Rice balls.jpg'
+        foodimage.alt = 'Onigiri/Rice Balls'
+        dishTitle.textContent = "Rice Balls"
+        requiredIngredients.textContent = "Required Ingredients:"
+        requiredList.innerHTML = `- 1 <br> 
+        - 2 <br>
+        - 3 <br>
+        - 4 <br>
+        `;
+        customisableIngredients.textContent = "Customisable Ingredients:"
+        optionalList.innerHTML = `- 1 <br> 
+        - 2 <br>
+        - 3 <br>
+        - 4 <br>
+        `;
+        paragraph.textContent = "Riceball Recipe";
+    }
+
+    function RamenRecipe() {
+        foodimage.src = 'Images/ramen.jpg'
+        foodimage.alt = 'Ramen/Noodles'
+        dishTitle.textContent = "Ramen"
+        requiredIngredients.textContent = "Required Ingredients:"
+        requiredList.innerHTML = `- 1 <br> 
+        - 2 <br>
+        - 3 <br>
+        - 4 <br>
+        `;
+        customisableIngredients.textContent = "Customisable Ingredients:"
+        optionalList.innerHTML = `- 1 <br> 
+        - 2 <br>
+        - 3 <br>
+        - 4 <br>
+        `;
+        paragraph.textContent = "Ramen Recipe";
+    }
+
+    function CurryRecipe() {
+        foodimage.src = 'Images/curry-rice.jpg'
+        foodimage.alt = 'Japanese Curry Rice'
+        dishTitle.textContent = "Curry Rice"
+        requiredIngredients.textContent = "Required Ingredients:"
+         requiredList.innerHTML = `- 1 <br> 
+        - 2 <br>
+        - 3 <br>
+        - 4 <br>
+        `;
+        customisableIngredients.textContent = "Customisable Ingredients:"
+        optionalList.innerHTML = `- 1 <br> 
+        - 2 <br>
+        - 3 <br>
+        - 4 <br>
+        `;
+        paragraph.textContent = "Curry Recipe";
+    }
+
+    function SushiRecipe() {
+        foodimage.src = 'Images/sushi.jpg'
+        foodimage.alt = 'Sushi'
+        dishTitle.textContent = "Sushi"
+        requiredIngredients.textContent = "Required Ingredients:"
+        requiredList.innerHTML = `- 1 <br> 
+        - 2 <br>
+        - 3 <br>
+        - 4 <br>
+        `;
+        customisableIngredients.textContent = "Customisable Ingredients:"
+        optionalList.innerHTML = `- 1 <br> 
+        - 2 <br>
+        - 3 <br>
+        - 4 <br>
+        `;
+        paragraph.textContent = "Sushi Recipe";
+    }
+</script>
 
 </html>
