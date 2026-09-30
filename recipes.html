@@ -52,6 +52,7 @@
             <h3 id="required-list"></h3>
             <h2 id="customisable-ingredients"></h2>
             <h3 id="optional-list"></h3>
+            <h2 id="instructions-title"></h2>
             <p></p>
         </div>
     </div>
@@ -64,7 +65,9 @@
     var requiredList = document.querySelector("#instructions .content-item #required-list");
     var customisableIngredients = document.querySelector("#instructions .content-item #customisable-ingredients");
     var optionalList = document.querySelector("#instructions .content-item #optional-list");
+    var instructionsTitle = document.querySelector("#instructions .content-item #instructions-title");
     var foodimage = document.querySelector("#instructions .sideimg-div img");
+
     const recipeImagePaths = [
         "Images/Rice balls.jpg",
         "Images/ramen.jpg",
@@ -77,28 +80,43 @@
         image.src = path;
     });
     
+    function recipeSelected() {
+        foodimage.style.display = "block";
+        foodimage.classList.add("recipe-selected-border");
+        sessionStorage.setItem("recipeSelected", "true");
+    }
+    
     function RiceballRecipe() {
         foodimage.src = 'Images/Rice balls.jpg'
         foodimage.alt = 'Onigiri/Rice Balls'
+        recipeSelected();
         dishTitle.textContent = "Rice Balls"
         requiredIngredients.textContent = "Required Ingredients:"
-        requiredList.innerHTML = `- 1 <br> 
-        - 2 <br>
-        - 3 <br>
-        - 4 <br>
+        requiredList.innerHTML = `- 2 cups of short-grained rice <br> 
+        - 1/2 teaspoon of salt <br>
+        - 4 sheets of roasted seaweed <br>
         `;
         customisableIngredients.textContent = "Customisable Ingredients:"
-        optionalList.innerHTML = `- 1 <br> 
-        - 2 <br>
-        - 3 <br>
-        - 4 <br>
+        optionalList.innerHTML = `- Umeboshi (Pickled Plum) <br> 
+        - Katsuobushi (dried bonito flakes) <br>
+        - Furikake (Typical Japanese Rice Seasoning) <br>
+        - Tuna Mayo (can be canned) <br>
+        - Meats like cooked beef or chicken (typical meats in Onigiri)
         `;
-        paragraph.textContent = "Riceball Recipe";
+        instructionsTitle.textContent = "|| Serving for 4 || Instructions:"
+        paragraph.innerHTML = `1. Prepare 2 cups of steamed rice according to the instructions of your rice cooker, or instructions on the pouch if using instant rice. <br>
+        2. Wet your hands with water. In a bowl, add the steamed rice and salt. Take a handful of rice and begin to press the rice into a flat ball/triangle shape using your hands. Try to make the rice shaped in your hand around 1.5cm thick so it can keep its shape. If needed, add more rice.<br>
+        3. In the middle of the pressed rice, form a dip in the center that does not penetrate to the other side of the rice. Leave roughly 4cm of space around the edges of the rice ball when making the hole. If adding filling, use one filling and fill up the hole until the stack is slightly taller than the surface of the rice. <br>
+        4. Keep on adding handfuls of rice from the bowl into your hands and pressing into shape until you cannot see the filling inside. If not adding filling, add rice until the Onigiri reaches a preferred, serveable size.<br>
+        5. Cut a long strip of roasted seaweed roughly the same width as the rice ball. Place the rice ball in the middle of the seaweed strip, and raise both ends of the seaweed to fold on the rice ball. <br>
+        6. Garnish with Furikake/Katsuobushi. Repeat 3 more times from Step 2 (or until all rice has been used up) and enjoy!
+        `;
     }
 
     function RamenRecipe() {
         foodimage.src = 'Images/ramen.jpg'
         foodimage.alt = 'Ramen/Noodles'
+        recipeSelected();
         dishTitle.textContent = "Ramen"
         requiredIngredients.textContent = "Required Ingredients:"
         requiredList.innerHTML = `- 1 <br> 
@@ -112,15 +130,18 @@
         - 3 <br>
         - 4 <br>
         `;
-        paragraph.textContent = "Ramen Recipe";
+        instructionsTitle.textContent = "Instructions:"
+        paragraph.innerHTML = ` 1. <br>
+        `;
     }
 
     function CurryRecipe() {
         foodimage.src = 'Images/curry-rice.jpg'
         foodimage.alt = 'Japanese Curry Rice'
+        recipeSelected();
         dishTitle.textContent = "Curry Rice"
         requiredIngredients.textContent = "Required Ingredients:"
-         requiredList.innerHTML = `- 1 <br> 
+        requiredList.innerHTML = `- 1 <br> 
         - 2 <br>
         - 3 <br>
         - 4 <br>
@@ -131,12 +152,15 @@
         - 3 <br>
         - 4 <br>
         `;
-        paragraph.textContent = "Curry Recipe";
+        instructionsTitle.textContent = "Instructions:"
+        paragraph.innerHTML = ` 1. <br>
+        `;
     }
 
     function SushiRecipe() {
         foodimage.src = 'Images/sushi.jpg'
         foodimage.alt = 'Sushi'
+        recipeSelected();
         dishTitle.textContent = "Sushi"
         requiredIngredients.textContent = "Required Ingredients:"
         requiredList.innerHTML = `- 1 <br> 
@@ -150,7 +174,9 @@
         - 3 <br>
         - 4 <br>
         `;
-        paragraph.textContent = "Sushi Recipe";
+        instructionsTitle.textContent = "Instructions:"
+        paragraph.innerHTML = ` 1. <br>
+        `;
     }
 </script>
 
