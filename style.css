@@ -250,18 +250,26 @@ header li:hover {
 
 #instructions p {
     font-size: 1em;
+    font-family: 'Public Sans';
 }
 
 #instructions h1 {
-    font-size: 2em;
+    font-size: 4em;
+    font-family: 'Caveat Brush';
+    color: white;
+    -webkit-text-stroke: 0.3px black;
 }
 
 #instructions h2 {
     font-size: 1.5em;
+    font-family: 'Public Sans';
+    margin-bottom: 15px;
 }
 
 #instructions h3 {
     font-size: 1.2em;
+    font-family: 'Public Sans';
+    font-weight: normal;
 }
 
 #instructions .paragraph-div { 
@@ -320,7 +328,7 @@ header li:hover {
     }
 
     #instructions h1 {
-        font-size: 2em;
+        font-size: 3.5em;
     }
 
     #instructions h2 {
@@ -406,7 +414,7 @@ header li:hover {
     }
 
     #instructions h1 {
-        font-size: 3em;
+        font-size: 5em;
     }
 
     #instructions h2 {
