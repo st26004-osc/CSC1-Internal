@@ -332,7 +332,7 @@ header li:hover {
     }
 
     #instructions h2 {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     #instructions h3 {
@@ -414,19 +414,19 @@ header li:hover {
     }
 
     #instructions h1 {
-        font-size: 5em;
+        font-size: 4em;
     }
 
     #instructions h2 {
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
 
     #instructions h3 {
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
 
     #instructions p {
-        font-size: 1.2em;
+        font-size: 1em;
         line-height: 30px;
     }
 
