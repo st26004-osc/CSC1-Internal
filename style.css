@@ -73,6 +73,47 @@ hr {
     grid-row: 2;
 }
 
+#home-button {
+    display: block;
+    font-family: 'Valley Sans';
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    text-align: center;
+    align-content: center;
+    font-size: 20px;
+    margin: 20px 30px;
+    width: 60%;
+    height: 50px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#home-button span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#home-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#home-button:hover span {
+    padding-right: 25px;
+    text-decoration: underline;
+}
+
+#home-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
 /* Cuisine Page Config.*/
 #cuisine {
     margin: 20px 20px;
@@ -141,6 +182,7 @@ header a {
     font-family: Helvetica, Arial, sans-serif;
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 header h3 {
@@ -344,16 +386,16 @@ header li:hover {
     justify-content: center;
     gap: 10px;
     min-width: 200px;
+    transition: transform 0.2s ease;
 }
 
 #contact h3 {
     display: block;
     font-family: 'Public Sans';
     font-size: 1.2em;
-    transition: transform 0.2s ease;
 }
 
-.socials div h3:hover {
+.socials div:hover {
     text-decoration: underline;
     color: purple;
     transform: scale(1.05);
@@ -372,6 +414,11 @@ header li:hover {
 @media screen and (max-width: 769px) {
     #home-title h1 {
         font-size: 3em;
+    }
+
+    #home-button {
+        font-size: 1em;
+        width: 70%;
     }
 
     #cuisine h1 {
@@ -411,7 +458,7 @@ header li:hover {
     }
 
     #instructions h3 {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     #contact .socials {
@@ -445,9 +492,15 @@ header li:hover {
     #home-title h1 {
         display: none;
     }
-
+    
     #home-title p {
         font-size: 1.2em;
+    }
+
+    #home-button {
+        justify-self: center;
+        font-size: 1em;
+        width: 80%;
     }
 
     .sideimg-div p {
