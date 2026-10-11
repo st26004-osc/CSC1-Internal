@@ -293,6 +293,69 @@ header li:hover {
     border: 5px solid #604C36;
 }
 
+/* Contact Page Config */
+#contact {
+    margin: 20px 30px;
+    text-align: center;
+}
+
+#contact h1 {
+    font-family: 'Caveat Brush';
+    font-size: 4em;
+    margin: 20px;
+}
+
+#contact p {
+    font-family: 'Public Sans';
+    font-size: 1.2em;
+    margin: 10px 30px;
+}
+
+#contact h2 {
+    text-decoration: underline;
+    font-family: 'Public Sans';
+    font-size: 2.3em;
+    margin: 20px;
+}
+
+.content .socials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    margin-top: 20px;
+    gap: 12px;
+}
+
+.socials div {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 200px;
+}
+
+#contact h3 {
+    display: block;
+    font-family: 'Public Sans';
+    font-size: 1.2em;
+    transition: transform 0.2s ease;
+}
+
+.socials div h3:hover {
+    text-decoration: underline;
+    color: purple;
+    transform: scale(1.05);
+    transform-origin: left;
+}
+
+.socials img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
 /* Responsive design on mobile devices */
 @media screen and (max-width: 769px) {
     #home-title h1 {
@@ -337,6 +400,11 @@ header li:hover {
 
     #instructions h3 {
         font-size: 1em;
+    }
+
+    #contact .socials {
+        align-items: center;
+        justify-items: center;
     }
 }
 
@@ -443,5 +511,22 @@ header li:hover {
     .recipe {
         width: 90%;
         height: auto;
+    }
+
+    #contact .socials {
+        grid-template-columns: 1fr;
+    }
+
+    #contact h2 {
+        font-size: 2em;
+        margin: 15px 0;
+    }
+
+    #contact h1 {
+        font-size: 3.5em;
+    }
+
+    #contact p {
+        font-size: 1.1em;
     }
 }
