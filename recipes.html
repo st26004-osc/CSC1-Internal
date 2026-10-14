@@ -28,27 +28,27 @@
     </header>
 
     <div class="recipe-container">
-        <button onclick="RiceballRecipe()" id="riceballs" class="recipe">Rice Balls</button>
-        <button onclick="RamenRecipe()" id="ramen" class="recipe">Ramen</button>
-        <button onclick="SushiRecipe()" id="sushi" class="recipe">Sushi</button>
-        <button onclick="CurryRecipe()" id="curry" class="recipe">Curry Rice</button>
+        <a href="?recipe=riceballs" id="riceballs" class="recipe">Rice Balls</a>
+        <a href="?recipe=ramen" id="ramen" class="recipe">Ramen</a>
+        <a href="?recipe=sushi" id="sushi" class="recipe">Sushi</a>
+        <a href="?recipe=curry" id="curry" class="recipe">Curry Rice</a>
     </div>
 
-    <div class="content" id="instructions">
+    <main class="content" id="instructions">
         <div class="sideimg-div">
             <img src="https//:0" alt=""> 
         </div>
 
-        <div class="content-item paragraph-div">
+        <article class="content-item paragraph-div">
             <h1>Please select a recipe.</h1>
             <h2 id="required-ingredients">Required Ingredients:</h2>
-            <h3 id="required-list">Blank</h3>
+            <h3 id="required-list">nil</h3>
             <h2 id="customisable-ingredients">Customisable Ingredients:</h2>
-            <h3 id="optional-list">Blank</h3>
+            <h3 id="optional-list">nil</h3>
             <h2 id="instructions-title">Instructions:</h2>
-            <p>Blank</p>
-        </div>
-    </div>
+            <p>nil</p>
+        </article>
+    </main>
 
     <script>
         var paragraph = document.querySelector("#instructions .content-item p");
@@ -193,6 +193,21 @@
             6. Start rolling the sushi away from you tightly using the rolling mat, applying gentle pressure to shape it into a cylinder. If you find it difficult to roll all the way around, try to remove some of the filling to make the rolling process easier, as you may have put too much. <br>
             7. Repeat from steps 4 to 6 until all of the sushi rice has been used up. Once finished, use a knife to cut up the sushi into bite-sized pieces. <br>
             `;
+        }
+
+        switch (new URLSearchParams(window.location.search).get("recipe")) {
+            case "riceballs":
+                RiceballRecipe();
+                break;
+            case "ramen":
+                RamenRecipe();
+                break;
+            case "sushi":
+                SushiRecipe();
+                break;
+            case "curry":
+                CurryRecipe();
+                break;
         }
     </script>
 </body>
