@@ -209,6 +209,35 @@
                 CurryRecipe();
                 break;
         }
+
+        if ('connection' in navigator) {
+            const connectionType = navigator.connection.effectiveType;
+
+            if (connectionType === '3g' || connectionType === '2g') {
+                var logo = document.getElementById("logo");
+                logo.style.display = "none";
+                foodimage.style.display = "none";
+            }
+
+            navigator.connection.addEventListener('change', () => {
+                if (navigator.connection.effectiveType === '3g' || navigator.connection.effectiveType === '2g') {
+                    var logo = document.getElementById("logo");
+                    logo.style.display = "none";
+                    foodimage.style.display = "none";
+                } else {
+                    var logo = document.getElementById("logo");
+                    logo.style.display = "block";
+
+                    if (instructions.classList.contains("recipe-selected") === false) {
+                        foodimage.style.display = "none";
+                    }else {
+                        foodimage.style.display = "block";
+                    }
+                }
+            });
+        }
+
+
     </script>
 </body>
 
